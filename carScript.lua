@@ -23,9 +23,9 @@ local function spawnCar()
     local vehicle
     repeat
         wait(1)
-        print("Looking for the vehicle in workspace...")
+        -- Look for the vehicle in workspace by checking if it has a VehicleSeat and BasePart
         for _, obj in pairs(workspace:GetChildren()) do
-            if obj:IsA("Model") and obj:FindFirstChildWhichIsA("VehicleSeat") and obj:FindFirstChildWhichIsA("BasePart") then
+            if obj:IsA("Model") and obj:FindFirstChildWhichIsA("VehicleSeat") then
                 vehicle = obj
                 print("Found vehicle: " .. vehicle.Name)
                 break
@@ -111,3 +111,4 @@ if vehicle then
 else
     print("Vehicle spawn failed.")
 end
+
